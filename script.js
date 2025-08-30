@@ -1,29 +1,54 @@
-// JavaScript para interatividade do header
-document.addEventListener('DOMContentLoaded', function() {
-    const logo = document.getElementById('logo');
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- LÓGICA DO MENU HAMBÚRGUER (MOBILE/TABLET) ---
+    const hamburgerButton = document.getElementById('hamburger-button');
     const navMenu = document.getElementById('nav-menu');
-    
-    // Animação do header ao carregar
-    setTimeout(() => {
-        // Após 2 segundos, desliza o logo para a esquerda e mostra o menu
-        logo.style.transform = 'translateX(0)';
-        navMenu.classList.add('show');
-    }, 2000);
-    
-    // Smooth scroll para navegação
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+    const navLinks = document.querySelectorAll('.header__nav-link');
+
+    // Abre/Fecha o menu ao clicar no botão
+    hamburgerButton.addEventListener('click', () => {
+        hamburgerButton.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar em um link (ótimo para one-page sites)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerButton.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
+
+    // --- LÓGICA DA ANIMAÇÃO DE ENTRADA (SOMENTE DESKTOP) ---
+    const logoContainer = document.querySelector('.header__logo-container');
+    const nav = document.querySelector('.header__nav');
+    const ctaContainer = document.querySelector('.header__cta-container');
+
+    // Verifica o tamanho da tela antes de rodar a animação
+    if (window.innerWidth >= 1024 && logoContainer) {
+        
+        // Inicia a animação da logo
+        logoContainer.classList.add('header__logo-container--animated');
+
+        // Quando a animação da logo terminar, inicia a da navegação e CTA
+        logoContainer.addEventListener('animationend', (event) => {
+            if (event.animationName === 'logoFadeInSlide') {
+                logoContainer.classList.remove('header__logo-container--animated');
+                logoContainer.classList.add('final-position');
+
+                setTimeout(() => {
+                    nav.classList.add('header__nav--animated');
+                    ctaContainer.classList.add('header__cta-container--animated');
+                }, 100);
+            }
+        });
+    } else if (logoContainer) {
+        // Em telas menores, apenas mostra os elementos sem animação
+        logoContainer.style.opacity = 1;
+        // O restante (nav, cta) é controlado pelo CSS do mobile
+    }
 });
+
 
 
 // Carrossel de Slide da seção Nutrição Personalizada
