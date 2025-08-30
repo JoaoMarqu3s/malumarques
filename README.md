@@ -3,8 +3,6 @@ Portfolio Nutricionista - Malu Marques
 Este é o repositório do site de portfólio desenvolvido para a nutricionista Maria Luisa (Malu) Marques. O projeto foi criado para ser uma presença digital elegante, moderna e informativa, apresentando seus serviços, sua filosofia de trabalho e facilitando o contato com novos pacientes.
 O layout é totalmente responsivo, projetado com uma abordagem mobile-first para garantir uma experiência de usuário impecável em todos os dispositivos, desde smartphones e tablets até desktops.
 
-➡️ Acesse a versão final: malumarques.com.br (substitua pelo link final do projeto)
-
 ✨ Funcionalidades Principais
 Animação de Entrada Sofisticada: Uma animação de carregamento no cabeçalho que move a logo do centro para a esquerda, revelando os links de navegação e o botão de CTA de forma suave (visível apenas em desktops).
 
