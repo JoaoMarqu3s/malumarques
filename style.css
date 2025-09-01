@@ -634,6 +634,13 @@ html {
     z-index: 50;
 }
 
+@media (max-width: 950px) {
+    .sublogo{
+        max-width: 15rem;
+    }
+}
+
+
 /* Efeito de desfoque no fundo */
 body.modal-open > *:not(.modal-overlay) {
     filter: blur(5px);
