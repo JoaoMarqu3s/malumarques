@@ -177,7 +177,7 @@ html {
 @media (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } .hero-content p { font-size: 1rem; } .hero-section { height: 80vh; } }
 
 
-.container h2{ font-size: 26px }
+
 /* ==================== ABOUT SECTION ==================== */
 .about-section { padding: 100px 0; background-color: var(--color-background); overflow: hidden; }
 .about-content { max-width: 1000px; margin: 0 auto; text-align: center; }
@@ -734,3 +734,5 @@ a { transition: all 0.3s ease; }
 img { transition: opacity 0.3s ease; }
 img:not([src]) { opacity: 0; }
 .objective-card, .nutrition-card, .follow-up-card, .contact-link { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.container h2{ font-size: 26px }
